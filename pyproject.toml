@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "photo-agent"
+version = "0.1.0"
+description = ""
+authors = ["abundance <abundanceanyanwu@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+langchain-community = "^0.2.12"
+openai = "^1.42.0"
+ipykernel = "^6.29.5"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.2"
+pytest-mock = "^3.14.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
