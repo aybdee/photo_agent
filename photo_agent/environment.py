@@ -95,8 +95,8 @@ class StrobeConfig:
 class SpeedLightConfig:
     def __init__(self, power=60, intensity=1, speed=1 / 1000):
         # validate fields
-        if power < 60 or power > 100:
-            raise ValueError("Power must be between 50 and 100")
+        if power < 100 or power > 1500:
+            raise ValueError("Power must be between 100 and 1500")
         if intensity < 1 / 128 or intensity > 1:
             raise ValueError("Intensity must be between 1 / 64 and 1")
         if speed < 1 / 30000 or speed > 1 / 1000:
@@ -355,9 +355,6 @@ class PhotoEnvironment:
         for light_config in config["lights"]:
             env.lights.append(Light.from_config(light_config))
         return env
-
-    def place_subject(self, position: Position):
-        self.subject = Subject(position)
 
     def add_light(self, light):
         self.lights.append(light)
